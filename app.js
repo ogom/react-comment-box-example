@@ -133,4 +133,22 @@ var CommentBox = React.createClass({
   }
 });
 
-module.exports = CommentBox;
+var ReactRedux = require('react-redux');
+var connect = ReactRedux.connect;
+
+var mapStateToProps = function(state) {
+  return {data: state};
+};
+
+var mapDispatchToProps = function(dispatch) {
+  return {
+    showComments: function(comments) {
+      dispatch({type: 'show_comments', comments: comments});
+    },
+    addComment: function(comment) {
+      dispatch({type: 'add_comment', comment: comment});
+    }
+  };
+};
+
+module.exports = connect(mapStateToProps, mapDispatchToProps)(CommentBox);
