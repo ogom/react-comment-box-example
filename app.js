@@ -86,7 +86,7 @@ var CommentBox = React.createClass({
       dataType: 'json',
       cache: false,
       success: function(data) {
-        this.setState({data: data});
+        this.props.showComments(data);
       }.bind(this),
       error: function(xhr, status, err) {
         console.error(this.props.url, status, err.toString());
@@ -126,7 +126,7 @@ var CommentBox = React.createClass({
     return (
       <div className="commentBox">
         <h1>Comments</h1>
-        <CommentList data={this.state.data} />
+        <CommentList data={this.props.data} />
         <CommentForm onCommentSubmit={this.handleCommentSubmit} />
       </div>
     );
