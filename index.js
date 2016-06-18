@@ -1,9 +1,9 @@
-var React = require('react')
-var ReactDOM = require('react-dom')
-var CommentBox = require('./app')
+import React from 'react'
+import ReactDOM from 'react-dom'
+import CommentBox from './app'
+import { createStore } from 'redux'
+import { Provider } from 'react-redux'
 
-var Redux = require('redux')
-var createStore = Redux.createStore
 var store = createStore(function(state, action) {
   if (state === undefined) {
     return []
@@ -18,9 +18,6 @@ var store = createStore(function(state, action) {
     return state
   }
 })
-
-var ReactRedux = require('react-redux')
-var Provider = ReactRedux.Provider
 
 ReactDOM.render(
   <Provider store={store}>
