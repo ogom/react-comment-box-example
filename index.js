@@ -4,7 +4,7 @@ import CommentBox from './app'
 import { createStore } from 'redux'
 import { Provider } from 'react-redux'
 
-var store = createStore(function(state, action) {
+const store = createStore(function(state, action) {
   if (state === undefined) {
     return []
   }
