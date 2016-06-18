@@ -22,9 +22,9 @@ class Comment extends Component {
   }
 }
 
-var CommentList = React.createClass({
-  render: function() {
-    var commentNodes = this.props.data.map(function(comment) {
+class CommentList extends Component {
+  render() {
+    const commentNodes = this.props.data.map((comment) => {
       return (
         <Comment author={comment.author} key={comment.id}>
           {comment.text}
@@ -37,7 +37,7 @@ var CommentList = React.createClass({
       </div>
     )
   }
-})
+}
 
 var CommentForm = React.createClass({
   getInitialState: function() {
