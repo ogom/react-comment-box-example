@@ -4,11 +4,7 @@ import CommentBox from './app'
 import { createStore } from 'redux'
 import { Provider } from 'react-redux'
 
-const store = createStore((state, action) => {
-  if (state === undefined) {
-    return []
-  }
-
+const store = createStore((state=[], action) => {
   switch (action.type) {
   case 'show_comments':
     return action.comments
