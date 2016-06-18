@@ -1,6 +1,7 @@
-var React = require('react')
-var Remarkable = require('remarkable')
-var $ = require('jquery')
+import React from 'react'
+import Remarkable from 'remarkable'
+import $ from 'jquery'
+import { connect } from 'react-redux'
 
 var Comment = React.createClass({
   rawMarkup: function() {
@@ -131,9 +132,6 @@ var CommentBox = React.createClass({
     )
   }
 })
-
-var ReactRedux = require('react-redux')
-var connect = ReactRedux.connect
 
 var mapStateToProps = function(state) {
   return {data: state}
