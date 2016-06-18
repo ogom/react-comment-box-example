@@ -148,4 +148,4 @@ var mapDispatchToProps = function(dispatch) {
   }
 }
 
-module.exports = connect(mapStateToProps, mapDispatchToProps)(CommentBox)
+export default connect(mapStateToProps, mapDispatchToProps)(CommentBox)
