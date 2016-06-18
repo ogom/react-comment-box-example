@@ -133,16 +133,16 @@ var CommentBox = React.createClass({
   }
 })
 
-var mapStateToProps = function(state) {
+const mapStateToProps = (state) => {
   return {data: state}
 }
 
-var mapDispatchToProps = function(dispatch) {
+const mapDispatchToProps = (dispatch) => {
   return {
-    showComments: function(comments) {
+    showComments(comments) {
       dispatch({type: 'show_comments', comments: comments})
     },
-    addComment: function(comment) {
+    addComment(comment) {
       dispatch({type: 'add_comment', comment: comment})
     }
   }
