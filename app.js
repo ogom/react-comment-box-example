@@ -1,16 +1,16 @@
-import React from 'react'
+import React, { Component } from 'react'
 import Remarkable from 'remarkable'
 import $ from 'jquery'
 import { connect } from 'react-redux'
 
-var Comment = React.createClass({
-  rawMarkup: function() {
-    var md = new Remarkable()
-    var rawMarkup = md.render(this.props.children.toString())
+class Comment extends Component {
+  rawMarkup() {
+    const md = new Remarkable()
+    const rawMarkup = md.render(this.props.children.toString())
     return { __html: rawMarkup }
-  },
+  }
 
-  render: function() {
+  render() {
     return (
       <div className="comment">
         <h2 className="commentAuthor">
@@ -20,7 +20,7 @@ var Comment = React.createClass({
       </div>
     )
   }
-})
+}
 
 var CommentList = React.createClass({
   render: function() {
