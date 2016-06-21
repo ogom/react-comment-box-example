@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import CommentBox from '../app'
+import CommentBox from './containers/App'
 import { createStore } from 'redux'
 import { Provider } from 'react-redux'
 
