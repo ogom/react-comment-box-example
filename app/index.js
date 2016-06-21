@@ -1,8 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import CommentBox from './containers/App'
 import { createStore } from 'redux'
 import { Provider } from 'react-redux'
+
+import App from './containers/App'
 
 const store = createStore((state=[], action) => {
   switch (action.type) {
@@ -17,7 +18,7 @@ const store = createStore((state=[], action) => {
 
 ReactDOM.render(
   <Provider store={store}>
-    <CommentBox url="http://localhost:3000/api/comments" pollInterval={2000} />
+    <App />
   </Provider>,
   document.getElementById('content')
 )
