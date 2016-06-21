@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import CommentBox from '../../components/CommentBox'
 import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
+import * as Actions from '../../actions'
 
 class App extends Component {
   render() {
@@ -26,14 +28,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    actions: {
-      showComments(comments) {
-        dispatch({type: 'show_comments', comments: comments})
-      },
-      addComment(comment) {
-        dispatch({type: 'add_comment', comment: comment})
-      }
-    }
+    actions: bindActionCreators(Actions, dispatch)
   }
 }
 
