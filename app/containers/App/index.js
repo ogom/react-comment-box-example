@@ -1,24 +1,7 @@
 import React, { Component } from 'react'
-import Comment from '../../components/Comment'
+import CommentList from '../../components/CommentList'
 import $ from 'jquery'
 import { connect } from 'react-redux'
-
-class CommentList extends Component {
-  render() {
-    const commentNodes = this.props.data.map((comment) => {
-      return (
-        <Comment author={comment.author} key={comment.id}>
-          {comment.text}
-        </Comment>
-      )
-    })
-    return (
-      <div className="commentList">
-        {commentNodes}
-      </div>
-    )
-  }
-}
 
 class CommentForm extends Component {
   constructor(props) {
