@@ -1,30 +1,23 @@
-var React = require('react');
-var ReactDOM = require('react-dom');
-var CommentBox = require('./app');
+import React from 'react'
+import ReactDOM from 'react-dom'
+import CommentBox from './app'
+import { createStore } from 'redux'
+import { Provider } from 'react-redux'
 
-var Redux = require('redux');
-var createStore = Redux.createStore;
-var store = createStore(function(state, action) {
-  if (state === undefined) {
-    return [];
-  }
-
+const store = createStore((state=[], action) => {
   switch (action.type) {
   case 'show_comments':
-    return action.comments;
+    return action.comments
   case 'add_comment':
-    return state.concat([action.comment]);
+    return state.concat([action.comment])
   default:
-    return state;
+    return state
   }
-});
-
-var ReactRedux = require('react-redux');
-var Provider = ReactRedux.Provider;
+})
 
 ReactDOM.render(
   <Provider store={store}>
     <CommentBox url="http://localhost:3000/api/comments" pollInterval={2000} />
   </Provider>,
   document.getElementById('content')
-);
+)
