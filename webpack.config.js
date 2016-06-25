@@ -1,4 +1,7 @@
 var webpack = require('webpack')
+var postcssImport = require('postcss-import')
+var autoprefixer = require('autoprefixer')
+var precss = require('precss')
 
 module.exports = {
   entry: './app/index',
@@ -23,9 +26,19 @@ module.exports = {
         include: /app/,
         loaders: [
           'style',
-          'css?modules'
+          'css?modules',
+          'postcss'
         ]
       }
+    ]
+  },
+  postcss(webpack) {
+    return [
+      postcssImport({
+          addDependencyTo: webpack
+      }),
+      autoprefixer,
+      precss
     ]
   },
   resolve: {
