@@ -17,8 +17,19 @@ module.exports = {
           'react-hot',
           'babel'
         ]
+      },
+      {
+        test: /\.css$/,
+        include: /app/,
+        loaders: [
+          'style',
+          'css'
+        ]
       }
     ]
+  },
+  resolve: {
+    extensions: ['', '.js', '.css']
   },
   devServer: {
     hot: true,

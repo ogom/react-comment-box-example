@@ -3,6 +3,7 @@ import CommentBox from '../../components/CommentBox'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import * as Actions from '../../actions'
+import style from './style'
 
 class App extends Component {
   render() {
