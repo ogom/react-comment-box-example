@@ -23,7 +23,7 @@ module.exports = {
         include: /app/,
         loaders: [
           'style',
-          'css'
+          'css?modules'
         ]
       }
     ]
