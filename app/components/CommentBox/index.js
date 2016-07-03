@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import CommentList from '../../components/CommentList'
 import CommentForm from '../../components/CommentForm'
 import $ from 'jquery'
+import style from './style'
 
 class CommentBox extends Component {
   constructor(props) {
@@ -52,7 +53,7 @@ class CommentBox extends Component {
 
   render() {
     return (
-      <div className="commentBox">
+      <div className={style.normal}>
         <h1>Comments</h1>
         <CommentList data={this.props.data} />
         <CommentForm onCommentSubmit={this.handleCommentSubmit.bind(this)} />

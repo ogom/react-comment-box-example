@@ -1,4 +1,7 @@
 var webpack = require('webpack')
+var postcssImport = require('postcss-import')
+var autoprefixer = require('autoprefixer')
+var precss = require('precss')
 
 module.exports = {
   entry: './app/index',
@@ -17,8 +20,29 @@ module.exports = {
           'react-hot',
           'babel'
         ]
+      },
+      {
+        test: /\.css$/,
+        include: /app/,
+        loaders: [
+          'style',
+          'css?modules',
+          'postcss'
+        ]
       }
     ]
+  },
+  postcss(webpack) {
+    return [
+      postcssImport({
+          addDependencyTo: webpack
+      }),
+      autoprefixer,
+      precss
+    ]
+  },
+  resolve: {
+    extensions: ['', '.js', '.css']
   },
   devServer: {
     hot: true,

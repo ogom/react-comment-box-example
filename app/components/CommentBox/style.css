@@ -1,0 +1,9 @@
+@import '../global.css';
+
+.normal h1 {
+  border-bottom: 1px solid #ddd;
+  font-size: $font-size-h1;
+  font-weight: bold;
+  margin: 0 0 15px;
+  padding: 0;
+}
