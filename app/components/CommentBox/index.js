@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import CommentList from '../../components/CommentList'
 import CommentForm from '../../components/CommentForm'
 import $ from 'jquery'
-import style from './style'
+import style from './style.css'
 
 class CommentBox extends Component {
   constructor(props) {

@@ -2,7 +2,7 @@
 
 *React tutorial example series*
 
-This is the Comment Box Example on React of [the React Tutorial](http://facebook.github.io/react/docs/tutorial.html).
+This is the Comment Box Example on React of [the React Tutorial (v15.3.2)](https://github.com/facebook/react/blob/v15.3.2/docs/docs/tutorial.md).
 
 ## Contains
 
