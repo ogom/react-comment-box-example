@@ -13,6 +13,7 @@ This is the Comment Box Example on React of [the React Tutorial (v15.3.2)](https
 - [x] [ECMAScript 2015](http://www.ecma-international.org/ecma-262/6.0/index.html)
 - [x] [Flux Standard Action](https://github.com/acdlite/flux-standard-action)
 - [x] [PostCSS](http://postcss.org)
+- [x] [Jest](https://facebook.github.io/jest/)
 
 ## Setup
 
@@ -20,10 +21,16 @@ This is the Comment Box Example on React of [the React Tutorial (v15.3.2)](https
 $ npm install
 ```
 
-## Running
+## Run
 
 ```
 $ npm start
+```
+
+## Test
+
+```
+$ npm test
 ```
 
 # License
