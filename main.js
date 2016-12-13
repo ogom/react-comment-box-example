@@ -1,3 +1,4 @@
+import * as Actions from './app/actions'
 import server from './server'
 import { app, BrowserWindow, Menu, dialog } from 'electron'
 
@@ -34,6 +35,7 @@ function createWindow () {
                   detail: 'message detail.',
                   buttons: ['OK']
                 })
+                focusedWindow.webContents.send('ipc::dispatch', Actions.showComments([]))
               }
             }
           ]

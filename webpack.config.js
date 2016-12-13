@@ -36,10 +36,5 @@ module.exports = {
       }
     ]
   },
-  devServer: {
-    hot: true,
-    port: 4000,
-    inline: true,
-    historyApiFallback: true
-  }
+  target: 'electron'
 }
