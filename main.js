@@ -1,5 +1,5 @@
 import server from './server'
-import { app, BrowserWindow } from 'electron'
+import { app, BrowserWindow, Menu, dialog } from 'electron'
 
 let mainWindow
 
@@ -10,6 +10,37 @@ function createWindow () {
   mainWindow.on('closed', () => {
     mainWindow = null
   })
+
+  Menu.setApplicationMenu(
+    Menu.buildFromTemplate(
+      [
+        {
+          label: 'App',
+          submenu: [
+            {
+              role: 'quit'
+            }
+          ]
+        },
+        {
+          label: 'Comment',
+          submenu: [
+            {
+              label: 'Clear',
+              click(item, focusedWindow) {
+                dialog.showMessageBox({
+                  type: 'info',
+                  message: 'Message!',
+                  detail: 'message detail.',
+                  buttons: ['OK']
+                })
+              }
+            }
+          ]
+        }
+      ]
+    )
+  )
 }
 
 app.on('ready', createWindow)
